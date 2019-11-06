@@ -43,6 +43,7 @@ public class PerfectWorker extends Thread {
 			}
 			cant = cant.add(unoBI);
 		}
+		
 	    if(sumas.compareTo(n) == 0) {
 	    		buffer.agregar(n);
 	        	System.out.println("es perfecto "+ n);

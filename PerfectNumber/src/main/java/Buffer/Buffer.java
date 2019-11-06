@@ -15,9 +15,9 @@ public class Buffer {
 	public Buffer(int capacidad, int cantThreads) {
 		this.capacidad = capacidad;
 		this.cantThreads = cantThreads;
-		lista = new LinkedList<BigInteger>();
-		listaRes = new LinkedList<BigInteger>();
-		puedeImprimir = true;
+		this.lista = new LinkedList<BigInteger>();
+		this.listaRes = new LinkedList<BigInteger>();
+		this.puedeImprimir = true;
 	}
 	
 	public synchronized void escribir(BigInteger n) {
