@@ -12,9 +12,9 @@ public class PerfectWorker extends Thread {
 	private int id;
 	
 	public PerfectWorker(Buffer b, Barrier barrier, int i) {
-		buffer = b;
-		barrierT = barrier;
-		id = i;
+		this.buffer = b;
+		this.barrierT = barrier;
+		this.id = i;
 	}
 	
 	public void run() {
