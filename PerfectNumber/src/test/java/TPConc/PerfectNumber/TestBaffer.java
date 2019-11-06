@@ -19,7 +19,7 @@ public class TestBaffer{
 	
 	@Before
 	public void setUp(){
-		b = new Buffer(2);
+		b = new Buffer(2,1);
 		p = new Productor(b);
 		c = new Consumidor(b);
 		cc2 = new Consumidor(b);

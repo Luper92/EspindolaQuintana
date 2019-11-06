@@ -17,7 +17,7 @@ public class Main {
 		BigInteger numPerfectoBI6 = new BigInteger("8589869056");
 		BigInteger numPerfectoBI7 = new BigInteger("137438691328");
 		
-		Buffer b = new Buffer(capBuffer);
+		Buffer b = new Buffer(capBuffer, cantThread);
 		
 		ThreadPool tpool = new ThreadPool(cantThread, b);
 
@@ -38,13 +38,13 @@ public class Main {
 	}
 	
 	private static void crearPoisonsPills(LinkedList<BigInteger> lista, int cantThread) {
-		for(int i = 0; i < cantThread; i++){
+		for(int i = 0; i < cantThread; i++) {
 			lista.add(new BigInteger("-1"));
 		}
 	}
 
 	private static void crearLista(LinkedList<BigInteger> lista, int size) {
-		for(int i = 1; i < size; i++){
+		for(int i = 1; i < size; i++) {
 			lista.add(new BigInteger(i+""));
 		}
 	}

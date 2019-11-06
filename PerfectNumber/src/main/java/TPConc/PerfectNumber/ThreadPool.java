@@ -15,7 +15,7 @@ public class ThreadPool {
 		this.barrierT = new Barrier(cantThreads);
 		this.threads = cantThreads;
 		
-		for(int i=0; i<cantThreads; i++){
+		for(int i=0; i<cantThreads; i++) {
 			//creo PerfecWorker
 			Thread t = new PerfectWorker(b, barrierT, i);
 			list.add(t);
@@ -24,7 +24,7 @@ public class ThreadPool {
 	}
 
 	//inicializo los thread creados
-	public void runThreads(){
+	public void runThreads() {
 		list.forEach(t-> t.start());
 	}
 

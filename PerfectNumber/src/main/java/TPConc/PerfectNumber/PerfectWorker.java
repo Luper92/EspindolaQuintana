@@ -20,13 +20,13 @@ public class PerfectWorker extends Thread {
 	public void run() {
 		while(true){
 			BigInteger num = buffer.leer();
-			if((num.compareTo(new BigInteger("0"))) < 0){
+			if((num.compareTo(new BigInteger("0"))) < 0) {
 				//termina thread id
 				barrierT.esperar();
+				buffer.imprimirLista();
 				break;
-			}else 
-			{
-			esPerfecto(num);
+			}else {
+				esPerfecto(num);
 			}
 		}
 	}
@@ -37,13 +37,14 @@ public class PerfectWorker extends Thread {
 		BigInteger sumas = new BigInteger("0");
 		BigInteger cant = new BigInteger("1");
 		
-		while(cant.compareTo(n) == -1){
-			if((n.mod(cant).compareTo(ceroBI)) == 0){
+		while(cant.compareTo(n) == -1) {
+			if((n.mod(cant).compareTo(ceroBI)) == 0) {
 				sumas = sumas.add(cant);
 			}
 			cant = cant.add(unoBI);
 		}
-	    if(sumas.compareTo(n) == 0){
+	    if(sumas.compareTo(n) == 0) {
+	    		buffer.agregar(n);
 	        	System.out.println("es perfecto "+ n);
 	    }
 	}
