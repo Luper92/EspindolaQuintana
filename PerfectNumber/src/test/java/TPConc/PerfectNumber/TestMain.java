@@ -29,7 +29,7 @@ public class TestMain {
 	
 	@Before
 	public void setUp(){
-		b = new Buffer(60,2);
+		b = new Buffer(60);
 		tpool = new ThreadPool(2, b);
 		cuatroBI = new BigInteger("4");
     	cincoBI = new BigInteger("5");

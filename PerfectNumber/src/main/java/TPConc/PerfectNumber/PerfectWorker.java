@@ -23,7 +23,6 @@ public class PerfectWorker extends Thread {
 			if((num.compareTo(new BigInteger("0"))) < 0) {
 				//termina thread id
 				barrierT.esperar();
-				buffer.imprimirLista();
 				break;
 			}else {
 				esPerfecto(num);
@@ -45,7 +44,7 @@ public class PerfectWorker extends Thread {
 		}
 		
 	    if(sumas.compareTo(n) == 0) {
-	    		buffer.agregar(n);
+	    		barrierT.agregar(n);
 	        	System.out.println("es perfecto "+ n);
 	    }
 	}

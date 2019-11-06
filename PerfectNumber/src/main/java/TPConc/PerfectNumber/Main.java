@@ -17,7 +17,7 @@ public class Main {
 		BigInteger numPerfectoBI6 = new BigInteger("8589869056");
 		BigInteger numPerfectoBI7 = new BigInteger("137438691328");
 		
-		Buffer b = new Buffer(capBuffer, cantThread);
+		Buffer b = new Buffer(capBuffer);
 		
 		ThreadPool tpool = new ThreadPool(cantThread, b);
 
@@ -29,7 +29,7 @@ public class Main {
 		lista.add(numPerfectoBI3);
 		lista.add(numPerfectoBI4);
 		lista.add(numPerfectoBI5);
-		lista.add(numPerfectoBI6);
+	//	lista.add(numPerfectoBI6);
 		//lista.add(numPerfectoBI7);
 		
 		crearPoisonsPills(lista, cantThread);
