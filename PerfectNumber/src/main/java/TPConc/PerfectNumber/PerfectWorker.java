@@ -45,7 +45,7 @@ public class PerfectWorker extends Thread {
 		
 	    if(sumas.compareTo(n) == 0) {
 	    		barrierT.agregar(n);
-	        	System.out.println("es perfecto "+ n);
+	        	//System.out.println("es perfecto "+ n);
 	    }
 	}
 }

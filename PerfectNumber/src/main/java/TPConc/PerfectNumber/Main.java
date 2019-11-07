@@ -4,10 +4,12 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 
 import Buffer.Buffer;
+import printer.Printer;
 
 public class Main {
 	
 	public static void main( String[] args ) {
+		
 		
 		int cantThread = 9;
 		int capBuffer = 6;
@@ -23,18 +25,24 @@ public class Main {
 
 		LinkedList<BigInteger> lista = new LinkedList<BigInteger>();
 		
-		crearLista(lista, 195);
+		crearLista(lista, 16000);
 		
-		lista.add(numPerfectoBI5);
-		lista.add(numPerfectoBI3);
-		lista.add(numPerfectoBI4);
-		lista.add(numPerfectoBI5);
+		//lista.add(numPerfectoBI5);
+		//lista.add(numPerfectoBI3);
+		//lista.add(numPerfectoBI4);
+		//lista.add(numPerfectoBI5);
 	//	lista.add(numPerfectoBI6);
 		//lista.add(numPerfectoBI7);
 		
 		crearPoisonsPills(lista, cantThread);
 		
-		lista.forEach(e -> b.escribir(e));	
+		lista.forEach(e -> b.escribir(e));
+		
+		//System.out.println("agregados reales: " + b.getAgregados());
+		//tpool.print();
+		Printer p = new Printer(tpool.barrierT, b);
+		p.print();
+		
 	}
 	
 	private static void crearPoisonsPills(LinkedList<BigInteger> lista, int cantThread) {
@@ -45,7 +53,9 @@ public class Main {
 
 	private static void crearLista(LinkedList<BigInteger> lista, int size) {
 		for(int i = 1; i < size; i++) {
+			//lista.add(new BigInteger(i+""));
 			lista.add(new BigInteger(i+""));
+			
 		}
 	}
 }

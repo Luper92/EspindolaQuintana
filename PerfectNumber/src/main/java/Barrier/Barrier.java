@@ -3,11 +3,12 @@ package Barrier;
 import java.math.BigInteger;
 import java.util.LinkedList;
 
-public class Barrier {
-	
-	private int tope;
+import printer.Printer;
 
-	private LinkedList<BigInteger> listaRes;
+public class Barrier {
+	int tope;
+
+	LinkedList<BigInteger> listaRes;
 	private boolean puedeImprimir;
 
 	public Barrier(int cantThreads) {
@@ -35,11 +36,23 @@ public class Barrier {
 
 	//imprime la lista con todos los numeros Perfectos
 	private void imprimir() {
-		System.out.println("buffer lisyta "+ listaRes.size());
+		//System.out.println("buffer lisyta "+ listaRes.size());
+		//Printer p = new Printer(listaRes);
+		//p.print();
 		puedeImprimir = false;
 	}
 	
 	public void agregar(BigInteger n) {
 		listaRes.add(n);
 	}
+
+	public LinkedList<BigInteger> getListaRes() {
+		return listaRes;
+	}
+
+	public void setListaRes(LinkedList<BigInteger> listaRes) {
+		this.listaRes = listaRes;
+	}
+	
+	
 }
