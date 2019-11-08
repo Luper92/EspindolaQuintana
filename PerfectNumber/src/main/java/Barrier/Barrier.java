@@ -14,7 +14,7 @@ public class Barrier {
 	public Barrier(int cantThreads) {
 		this.tope = cantThreads;
 		this.listaRes = new LinkedList<BigInteger>();
-		this.puedeImprimir = true;
+		this.puedeImprimir = false;
 	}
 
 	public synchronized void esperar() {
@@ -36,13 +36,27 @@ public class Barrier {
 
 	//imprime la lista con todos los numeros Perfectos
 	private void imprimir() {
+		int l = listaRes.size();
+		String s = "[";
+		for(BigInteger e : this.listaRes){
+			int n= e.intValueExact();
+			String number = String.valueOf(n);
+			s = s.concat(number);
+			l--;
+			if(!(l == 0))
+				s = s.concat(", ");
+		}
+		s = s.concat("]");
+		//return s;
 		//System.out.println("buffer lisyta "+ listaRes.size());
 		//Printer p = new Printer(listaRes);
 		//p.print();
 		puedeImprimir = false;
+		System.out.println("Numeros Perfectos "+ s);
 	}
 	
 	public void agregar(BigInteger n) {
+		puedeImprimir = true;
 		listaRes.add(n);
 	}
 

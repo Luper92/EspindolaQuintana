@@ -25,13 +25,13 @@ public class Main {
 
 		LinkedList<BigInteger> lista = new LinkedList<BigInteger>();
 		
-		crearLista(lista, 16000);
+		crearLista(lista, 195);
 		
-		//lista.add(numPerfectoBI5);
-		//lista.add(numPerfectoBI3);
-		//lista.add(numPerfectoBI4);
-		//lista.add(numPerfectoBI5);
-	//	lista.add(numPerfectoBI6);
+		lista.add(numPerfectoBI5);
+		lista.add(numPerfectoBI3);
+		lista.add(numPerfectoBI4);
+		lista.add(numPerfectoBI5);
+		//lista.add(numPerfectoBI6);
 		//lista.add(numPerfectoBI7);
 		
 		crearPoisonsPills(lista, cantThread);
@@ -40,8 +40,8 @@ public class Main {
 		
 		//System.out.println("agregados reales: " + b.getAgregados());
 		//tpool.print();
-		Printer p = new Printer(tpool.barrierT, b);
-		p.print();
+		//Printer p = new Printer(tpool.barrierT, b);
+		//p.print();
 		
 	}
 	
@@ -53,7 +53,6 @@ public class Main {
 
 	private static void crearLista(LinkedList<BigInteger> lista, int size) {
 		for(int i = 1; i < size; i++) {
-			//lista.add(new BigInteger(i+""));
 			lista.add(new BigInteger(i+""));
 			
 		}
