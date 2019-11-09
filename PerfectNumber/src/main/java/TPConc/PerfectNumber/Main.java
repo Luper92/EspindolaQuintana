@@ -27,7 +27,7 @@ public class Main {
 		
 		crearLista(lista, 195);
 		
-		lista.add(numPerfectoBI5);
+		//lista.add(numPerfectoBI5);
 		lista.add(numPerfectoBI3);
 		lista.add(numPerfectoBI4);
 		lista.add(numPerfectoBI5);

@@ -4,17 +4,20 @@ import java.math.BigInteger;
 
 import Barrier.Barrier;
 import Buffer.Buffer;
+import printer.Contador;
 
 public class PerfectWorker extends Thread {
 
 	private Barrier barrierT;
 	private Buffer buffer;
 	private int id;
+	Contador contador;
 	
-	public PerfectWorker(Buffer b, Barrier barrier, int i) {
+	public PerfectWorker(Buffer b, Barrier barrier, int i, Contador c) {
 		this.buffer = b;
 		this.barrierT = barrier;
 		this.id = i;
+		this.contador = c;
 	}
 	
 	public void run() {
@@ -22,6 +25,7 @@ public class PerfectWorker extends Thread {
 			BigInteger num = buffer.leer();
 			if((num.compareTo(new BigInteger("0"))) < 0) {
 				//termina thread id
+				contador.termino();
 				barrierT.esperar();
 				break;
 			}else {

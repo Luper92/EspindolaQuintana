@@ -8,20 +8,17 @@ import Barrier.Barrier;
 import Buffer.Buffer;
 
 public class Printer {
-	LinkedList<BigInteger> lista;
-	int cantidadInicial;
+	Barrier barrier;
+	//LinkedList<BigInteger> lista;
+	Buffer buffer;
 	
-	public Printer(){
-		lista = new LinkedList<BigInteger>();
-	}
-	
-	public Printer(Barrier barrier, Buffer buffer){
-		lista = barrier.getListaRes();
-		cantidadInicial = buffer.getAgregados();
+	public Printer(Barrier barrier, Buffer b){
+		this.barrier = barrier;
+		buffer = b;
 	}
 	
 	public void print(){
-		System.out.println("Numeros totales analizados: " + cantidadInicial);
+		System.out.println("Numeros totales analizados: " + buffer.getAgregados());
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e1) {
@@ -31,32 +28,17 @@ public class Printer {
 		
 	 
 		
-		System.out.println("Cantidad de números perfectos: " + lista.size() + " números");
+		System.out.println("Cantidad de números perfectos: " + barrier.getListaRes().size() + " números");
 		
 		System.out.println("Lista de perfectos: " + this.getListaString());
 	
 	}
 
-	public int getCantidadInicial() {
-		return cantidadInicial;
-	}
-
-	public void setCantidadInicial(int i) {
-		this.cantidadInicial = cantidadInicial;
-	}
-
-	public LinkedList<BigInteger> getLista() {
-		return lista;
-	}
-
-	public void setLista(LinkedList<BigInteger> lista) {
-		this.lista = lista;
-	}
 	
 	public String getListaString(){
-		int l = lista.size();
+		int l = barrier.getListaRes().size();
 		String s = "[";
-		for(BigInteger e : this.lista){
+		for(BigInteger e : barrier.getListaRes()){
 			int n= e.intValueExact();
 			String number = String.valueOf(n);
 			s = s.concat(number);

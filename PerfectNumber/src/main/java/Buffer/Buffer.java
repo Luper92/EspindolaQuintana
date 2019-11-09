@@ -4,10 +4,13 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import printer.Contador;
+
 public class Buffer {
 	
 	private int capacidad;
 	Queue<BigInteger> lista;
+	//Contador c;
 	int agregados = 0;
 		
 	public Buffer(int capacidad) {
@@ -24,7 +27,7 @@ public class Buffer {
 		}
 		if(n.compareTo(new BigInteger("-1")) != 0)
 			this.agregados++;
-		//escribo n
+			//escribo n
 		lista.add(n);
 		
 		
